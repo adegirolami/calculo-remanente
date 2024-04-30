@@ -9,8 +9,9 @@ function calcularPresupuestoDiario() {
     const totalMensual = parseFloat(totalMensualInput.value);
     const consumido = parseFloat(consumidoInput.value);
     const fechaActual = new Date();
+    const diaActual = fechaActual.getDate(); // Obtener el día actual
     const ultimoDiaDelMes = new Date(fechaActual.getFullYear(), fechaActual.getMonth() + 1, 0);
-    const diasRestantes = Math.ceil((ultimoDiaDelMes - fechaActual) / (1000 * 60 * 60 * 24));
+    const diasRestantes = ultimoDiaDelMes.getDate() - diaActual + 1; // Calcular días restantes considerando el día actual
 
     if (diasRestantes <= 0) {
         resultadoElement.textContent = 'No hay días restantes en el mes';
