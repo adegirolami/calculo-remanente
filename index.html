@@ -1,25 +1,20 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Presupuesto Remanente</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <h1>Calculadora de Presupuesto Diario</h1>
-    <form>
-        <label for="total-mensual">Total mensual:</label>
-        <input type="number" id="total-mensual" placeholder="$">
-        <br><br>
-        <label for="consumido">Consumido hasta ahora:</label>
-        <input type="number" id="consumido" placeholder="$">
-        <br><br>
-        <button type="button" id="calcular">Calcular presupuesto diario</button>
-        <p id="resultado"></p>
-    </form>
+<form id="formulario">
+    <label for="total-mensual">Total mensual:</label>
+    <input type="number" id="total-mensual" placeholder="$">
+    <br><br>
+    <label for="consumido">Consumido hasta ahora:</label>
+    <input type="number" id="consumido" placeholder="$">
+    <br><br>
+    <button type="button" id="calcular">Calcular presupuesto diario</button>
+    <p id="resultado"></p>
+</form>
 
-    <script src="script.js"></script>
-</body>
-</html>
+<script>
+    const formulario = document.getElementById('formulario');
+
+    formulario.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            document.getElementById('calcular').click();
+        }
+    });
+</script>
